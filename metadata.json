@@ -1,0 +1,6 @@
+{
+  "name": "Gauchão Restaurante e Cozinha Industrial",
+  "description": "Gauchão Industrial: Especialista em alimentação coletiva e soluções de cozinha industrial em Três Lagoas - MS. Cartão digital interativo com Wi-Fi, contatos e avaliações.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

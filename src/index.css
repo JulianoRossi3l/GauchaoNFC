@@ -1,0 +1,118 @@
+@import "tailwindcss";
+
+:root {
+  /* MODO CLARO (PADRÃO) */
+  --bg-color: #f8f9fa;
+  --card-bg: #ffffff;
+  --text-main: #333333;
+  --text-sub: #666666;
+  --border: #e0e0e0;
+  --neon-pink: #ff007f;
+  --black: #000000;
+  --white: #ffffff;
+  --google-blue: #4285F4;
+  --accent-star: #f1c40f;
+  --save-contact-bg: #e8f5e9;
+  --partners-bg: #ffffff;
+  --wifi-btn-bg: #0f172a;
+  --wifi-btn-border: #38bdf8;
+  --wifi-accent: #0284c7;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    /* MODO ESCURO (AUTOMÁTICO) */
+    --bg-color: #121212;
+    --card-bg: #1e1e1e;
+    --text-main: #f0f0f0;
+    --text-sub: #aaaaaa;
+    --border: #333333;
+    --save-contact-bg: #1a2e1d;
+    --partners-bg: rgba(255, 255, 255, 0.94);
+    --wifi-btn-bg: #111827;
+    --wifi-btn-border: #38bdf8;
+    --wifi-accent: #38bdf8;
+  }
+}
+
+[data-theme="dark"] {
+  --bg-color: #121212;
+  --card-bg: #1e1e1e;
+  --text-main: #f0f0f0;
+  --text-sub: #aaaaaa;
+  --border: #333333;
+  --save-contact-bg: #1a2e1d;
+  --partners-bg: rgba(255, 255, 255, 0.94);
+  --wifi-btn-bg: #111827;
+  --wifi-btn-border: #38bdf8;
+  --wifi-accent: #38bdf8;
+}
+
+[data-theme="light"] {
+  --bg-color: #f8f9fa;
+  --card-bg: #ffffff;
+  --text-main: #333333;
+  --text-sub: #666666;
+  --border: #e0e0e0;
+  --neon-pink: #ff007f;
+  --black: #000000;
+  --white: #ffffff;
+  --google-blue: #4285F4;
+  --accent-star: #f1c40f;
+  --save-contact-bg: #e8f5e9;
+  --partners-bg: #ffffff;
+  --wifi-btn-bg: #0f172a;
+  --wifi-btn-border: #38bdf8;
+  --wifi-accent: #0284c7;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* CARROSSEL DE PARCEIROS */
+@keyframes scrollPartners {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-140px * 14));
+  }
+}
+
+.slider-animated {
+  display: flex;
+  width: calc(140px * 28);
+  animation: scrollPartners 38s linear infinite;
+  will-change: transform;
+}
+
+.slider-animated:hover {
+  animation-play-state: paused;
+}
+
+/* PULSE ANIMATION */
+@keyframes wifiPing {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+}
+
+.wifi-pulse {
+  animation: wifiPing 2s infinite ease-in-out;
+}
